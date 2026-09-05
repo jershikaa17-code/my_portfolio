@@ -14,8 +14,8 @@ export const personal = {
   careerObjective:
     'Enthusiastic Computer Science and Engineering student with hands-on experience in frontend React development and UI/UX through my current internship at OpsMonsters Software Consulting Private Limited. Seeking opportunities to strengthen my programming and backend development skills, particularly in Spring Boot, while continuing to build practical software development experience and learn from experienced professionals.',
   photo: assetUrl('jershika.jpg'),
-  phone: '+91 73391 20049',
-  phoneHref: 'tel:+917339120049',
+  currentRole: 'Associate System Engineer',
+  currentCompany: 'OpsMonsters Software Consulting Pvt. Ltd.',
   email: 'jershika.v@opsmonsters.in',
   emailHref: 'mailto:jershika.v@opsmonsters.in',
   linkedinUrl: 'https://www.linkedin.com/in/jershika-v-42484641b',

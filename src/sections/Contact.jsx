@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { HiOutlineMail, HiOutlinePhone } from 'react-icons/hi'
+import { HiOutlineMail } from 'react-icons/hi'
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { personal } from '../data/portfolioData'
 import SectionTitle from '../components/SectionTitle'
@@ -11,12 +11,6 @@ const contactItems = [
     value: personal.email,
     href: personal.emailHref,
     icon: HiOutlineMail,
-  },
-  {
-    label: 'Phone',
-    value: personal.phone,
-    href: personal.phoneHref,
-    icon: HiOutlinePhone,
   },
   {
     label: 'LinkedIn',
@@ -55,11 +49,22 @@ export default function Contact() {
         />
 
         <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          className="mx-auto mt-10 flex w-fit flex-col items-center gap-1 rounded-2xl border border-white/12 bg-white/5 px-6 py-4 text-center backdrop-blur-sm"
+        >
+          <span className="text-sm font-semibold text-blue-light sm:text-base">{personal.currentRole}</span>
+          <span className="text-xs text-white/60 sm:text-sm">{personal.currentCompany}</span>
+        </motion.div>
+
+        <motion.div
           variants={staggerContainer(0.1)}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2"
+          className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3"
         >
           {contactItems.map((item) => (
             <motion.a
