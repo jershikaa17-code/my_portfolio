@@ -7,7 +7,7 @@ export default function Education() {
   return (
     <section id="education" className="bg-white py-24 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
-        <SectionTitle eyebrow="03 · Education" title="Education" />
+        <SectionTitle title="Education" />
 
         <div className="relative mt-16">
           <motion.div

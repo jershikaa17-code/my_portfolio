@@ -15,7 +15,7 @@ export default function Achievements() {
   return (
     <section id="achievements" className="bg-white py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionTitle eyebrow="05 · Achievements" title="Achievements" />
+        <SectionTitle title="Achievements" />
 
         <motion.div
           variants={staggerContainer(0.12)}

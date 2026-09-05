@@ -1,13 +1,14 @@
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { personal } from '../data/portfolioData'
 
-export default function SocialLinks({ variant = 'dark', className = '' }) {
+export default function SocialLinks({ variant = 'dark', className = '', enhanced = false }) {
   const base =
     'flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2'
   const style =
     variant === 'dark'
       ? 'border-white/20 text-white hover:border-blue-light hover:text-blue-light hover:-translate-y-1'
       : 'border-border text-navy hover:border-blue-accent hover:text-blue-accent hover:-translate-y-1'
+  const enhancedStyle = enhanced ? 'hover:scale-110 hover:shadow-[0_0_18px_rgba(96,165,250,0.55)]' : ''
 
   return (
     <div className={`flex items-center gap-4 ${className}`}>
@@ -16,7 +17,7 @@ export default function SocialLinks({ variant = 'dark', className = '' }) {
         target="_blank"
         rel="noreferrer noopener"
         aria-label="Jershika's LinkedIn profile"
-        className={`${base} ${style}`}
+        className={`${base} ${style} ${enhancedStyle}`}
       >
         <FaLinkedinIn size={18} />
       </a>
@@ -25,7 +26,7 @@ export default function SocialLinks({ variant = 'dark', className = '' }) {
         target="_blank"
         rel="noreferrer noopener"
         aria-label="Jershika's GitHub profile"
-        className={`${base} ${style}`}
+        className={`${base} ${style} ${enhancedStyle}`}
       >
         <FaGithub size={18} />
       </a>

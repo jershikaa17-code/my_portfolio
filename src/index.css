@@ -20,6 +20,7 @@
   --animate-float-delayed: float 7s ease-in-out 1.2s infinite;
   --animate-pulse-soft: pulse-soft 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-grid-pan: grid-pan 40s linear infinite;
+  --animate-corner-drift: corner-drift 11s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -29,6 +30,18 @@
   }
   50% {
     transform: translateY(-16px);
+  }
+}
+
+@keyframes corner-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(22px, -18px);
+    opacity: 1;
   }
 }
 

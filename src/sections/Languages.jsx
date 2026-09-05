@@ -1,21 +1,14 @@
 import { motion } from 'framer-motion'
 import { HiOutlineTranslate } from 'react-icons/hi'
 import { languages } from '../data/portfolioData'
+import SectionTitle from '../components/SectionTitle'
 import { fadeUp, staggerContainer, viewportOnce } from '../animations/variants'
 
 export default function Languages() {
   return (
     <section id="languages" className="bg-surface py-16">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-5 text-center sm:px-8">
-        <motion.span
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="text-xs font-bold uppercase tracking-[0.2em] text-blue-accent"
-        >
-          08 · Languages
-        </motion.span>
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 px-5 text-center sm:px-8">
+        <SectionTitle title="Languages Known" />
 
         <motion.div
           variants={staggerContainer(0.1)}

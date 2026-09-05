@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <section id="skills" className="bg-surface py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionTitle eyebrow="04 · Skills" title="Technical Skills" />
+        <SectionTitle title="Technical Skills" />
 
         <div className="mt-14 flex flex-col gap-12">
           {skillGroups.map((group, groupIndex) => (

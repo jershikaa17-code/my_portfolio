@@ -1,21 +1,29 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { personal, heroStatus } from '../data/portfolioData'
 import Button from '../components/Button'
 import SocialLinks from '../components/SocialLinks'
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.16, delayChildren: 0.2 },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
-}
-
 export default function Hero() {
+  const shouldReduceMotion = useReducedMotion()
+
+  const container = {
+    hidden: {},
+    visible: {
+      transition: shouldReduceMotion
+        ? { staggerChildren: 0, delayChildren: 0 }
+        : { staggerChildren: 0.13, delayChildren: 0.15 },
+    },
+  }
+
+  const item = {
+    hidden: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 26 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: shouldReduceMotion ? { duration: 0.01 } : { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    },
+  }
+
   return (
     <section
       id="home"
@@ -29,7 +37,7 @@ export default function Hero() {
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-blue-accent/25 blur-3xl"
+        className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-blue-accent/25 blur-3xl animate-corner-drift"
         aria-hidden="true"
       />
       <div
@@ -62,34 +70,50 @@ export default function Hero() {
             {personal.fullGreeting}
           </motion.h1>
 
-          <motion.div variants={item} className="flex flex-col gap-1">
-            {personal.roles.map((role, index) => (
-              <p
-                key={role}
-                className={`font-display text-lg font-semibold sm:text-xl ${
-                  index === 0 ? 'text-blue-light' : 'text-white/80'
-                }`}
-              >
-                {role}
-              </p>
-            ))}
-          </motion.div>
+          <div className="flex flex-col gap-1">
+            <motion.p variants={item} className="font-display text-lg font-semibold text-blue-light sm:text-xl">
+              {personal.primaryRole}
+            </motion.p>
+            <motion.p variants={item} className="text-sm font-medium text-white/70 sm:text-base">
+              {personal.secondaryRole}
+            </motion.p>
+          </div>
 
           <motion.p variants={item} className="max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
             {personal.heroSupportingText}
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col gap-4 sm:flex-row">
-            <Button href="#projects" variant="primary">
+            <Button
+              href="#projects"
+              variant="primary"
+              whileHover={
+                shouldReduceMotion
+                  ? undefined
+                  : { y: -5, scale: 1.05, boxShadow: '0 16px 34px -10px rgba(37, 99, 235, 0.6)' }
+              }
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.96 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+            >
               View My Work
             </Button>
-            <Button href="#contact" variant="secondary">
+            <Button
+              href="#contact"
+              variant="secondary"
+              whileHover={
+                shouldReduceMotion
+                  ? undefined
+                  : { y: -5, scale: 1.05, boxShadow: '0 16px 34px -10px rgba(96, 165, 250, 0.45)' }
+              }
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.96 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+            >
               Contact Me
             </Button>
           </motion.div>
 
           <motion.div variants={item}>
-            <SocialLinks variant="dark" />
+            <SocialLinks variant="dark" enhanced />
           </motion.div>
         </motion.div>
 

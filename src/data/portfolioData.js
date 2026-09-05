@@ -6,7 +6,8 @@ const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`
 export const personal = {
   name: 'Jershika',
   fullGreeting: "Hi, I'm Jershika",
-  roles: ['Computer Science & Engineering Student', 'Frontend Developer Intern'],
+  primaryRole: 'Associate System Engineer',
+  secondaryRole: 'Computer Science & Engineering Student · Frontend Developer',
   heroSupportingText:
     'Building practical digital experiences with React, UI/UX and modern web technologies while developing a strong foundation in software and backend development.',
   aboutText:
@@ -14,8 +15,7 @@ export const personal = {
   careerObjective:
     'Enthusiastic Computer Science and Engineering student with hands-on experience in frontend React development and UI/UX through my current internship at OpsMonsters Software Consulting Private Limited. Seeking opportunities to strengthen my programming and backend development skills, particularly in Spring Boot, while continuing to build practical software development experience and learn from experienced professionals.',
   photo: assetUrl('jershika.jpg'),
-  currentRole: 'Associate System Engineer',
-  currentCompany: 'OpsMonsters Software Consulting Pvt. Ltd.',
+  locationLabel: 'Tamil Nadu, India',
   email: 'jershika.v@opsmonsters.in',
   emailHref: 'mailto:jershika.v@opsmonsters.in',
   linkedinUrl: 'https://www.linkedin.com/in/jershika-v-42484641b',

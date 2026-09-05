@@ -10,7 +10,7 @@ export default function Strengths() {
   return (
     <section id="strengths" className="bg-white py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionTitle eyebrow="07 · Strengths" title="Strengths" />
+        <SectionTitle title="Strengths" />
 
         <motion.div
           variants={staggerContainer(0.12)}

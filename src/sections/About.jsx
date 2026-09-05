@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section id="about" className="bg-white py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionTitle eyebrow="01 · About" title="About Me" />
+        <SectionTitle title="About Me" />
 
         <div className="mt-14 grid grid-cols-1 gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <motion.p

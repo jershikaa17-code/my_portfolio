@@ -10,7 +10,6 @@ export default function Projects() {
     <section id="projects" className="bg-surface py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionTitle
-          eyebrow="06 · Projects"
           title="Projects"
           subtitle="Two Android applications and two web applications built for a Montessori school management system, covering practical school workflows for staff and students."
         />

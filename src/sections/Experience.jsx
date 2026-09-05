@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { experience } from '../data/portfolioData'
+import { personal, experience } from '../data/portfolioData'
 import SectionTitle from '../components/SectionTitle'
 import { fadeUp, staggerContainer, viewportOnce } from '../animations/variants'
 
@@ -7,7 +7,7 @@ export default function Experience() {
   return (
     <section id="experience" className="bg-surface py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionTitle eyebrow="02 · Experience" title="Current Internship" />
+        <SectionTitle title="Current Internship" />
 
         <motion.div
           variants={fadeUp}
@@ -24,10 +24,11 @@ export default function Experience() {
           <div className="relative flex flex-col gap-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
-                  {experience.role}
-                </h3>
-                <p className="mt-1 text-base font-medium text-blue-light">{experience.company}</p>
+                <p className="mb-2 font-display text-lg font-bold text-blue-light sm:text-xl">
+                  {personal.primaryRole}
+                </p>
+                <p className="text-lg font-semibold text-white sm:text-xl">{experience.role}</p>
+                <p className="mt-1 text-sm font-medium text-white/60">{experience.company}</p>
               </div>
 
               <span className="flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold text-white">
